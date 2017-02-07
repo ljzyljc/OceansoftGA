@@ -29,7 +29,6 @@ public class ConsultFragment extends AbsBaseFragment<ConsultPresenter,IConsultVi
     private XRefreshView xRefreshView;
     private boolean mIsRefreshing=false;  //刷新
     private boolean mIsLoading=false;    //加载
-    private ConsultPresenter consultPresenter;
     private ConsultAdapter consultAdapter;
     private RecyclerView recycleView;
     private int pageNum=1;   //加载的页数
@@ -48,8 +47,7 @@ public class ConsultFragment extends AbsBaseFragment<ConsultPresenter,IConsultVi
 
     @Override
     public ConsultPresenter bindPresenter() {
-        consultPresenter=new ConsultPresenter(getActivity());
-        return consultPresenter;
+        return new ConsultPresenter(getActivity());
     }
 
     @Override
@@ -57,10 +55,8 @@ public class ConsultFragment extends AbsBaseFragment<ConsultPresenter,IConsultVi
         if (consultMatter.isSucc()){
             //关闭控件
             closeLoadingOrRefreshing();
-
             consultList.addAll(consultMatter.getData().getList());
             consultAdapter.notifyDataSetChanged();
-//                    consultList= (ArrayList<ConsultMatter.DataBean.ListBean>) consultMatter.getData().getList();
             Log.i("jc",consultList.size()+"----");
             Log.i("jc","倒是加载啊"+consultList.size());
 
@@ -107,7 +103,6 @@ public class ConsultFragment extends AbsBaseFragment<ConsultPresenter,IConsultVi
         recycleView= (RecyclerView) contentView.findViewById(R.id.recycleView);
         recycleView.setHasFixedSize(true);
         recycleView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
         consultAdapter=new ConsultAdapter(consultList,getActivity());
         recycleView.setAdapter(consultAdapter);
         //设置这个才有上拉加载的加载组件
@@ -127,10 +122,9 @@ public class ConsultFragment extends AbsBaseFragment<ConsultPresenter,IConsultVi
                     xRefreshView.stopRefresh();
                     return;
                 }
-
                 pageNum=1;
                 //  consultList.clear();   //如果在这里添加了clear，就会报数组越界异常（解决）
-                consultPresenter.getConsultList(pageNum);
+                getPresenter().getConsultList(pageNum);
                 mIsRefreshing=true;
             }
 
@@ -143,16 +137,10 @@ public class ConsultFragment extends AbsBaseFragment<ConsultPresenter,IConsultVi
                     return;
                 }
                 pageNum++;
-                consultPresenter.getConsultList(pageNum);
+                getPresenter().getConsultList(pageNum);
                 mIsLoading=true;
             }
         });
-
-//        consultList=new ArrayList<>();
-//        consultAdapter=new ConsultAdapter(consultList,getActivity());
-//        recycleView.setAdapter(consultAdapter);
-//        //设置这个才有上拉加载的加载组件
-//        consultAdapter.setCustomLoadMoreView(new XRefreshViewFooter(getContext()));
         //请求数据
         getPresenter().getConsultList(pageNum);
 

@@ -23,7 +23,7 @@ public class MainActivity extends BaseActivity implements TabHost.OnTabChangeLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initTabItemList();
-        //绑定
+        //绑定TabHost
         initTabView();
     }
     private void initTabView() {

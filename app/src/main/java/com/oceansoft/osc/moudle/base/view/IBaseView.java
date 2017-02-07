@@ -7,4 +7,5 @@ import com.oceansoft.osc.mvp.view.IMvpView;
  */
 
 public interface IBaseView extends IMvpView{
+
 }
