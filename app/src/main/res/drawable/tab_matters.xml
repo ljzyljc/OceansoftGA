@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 首页 事项中心的图片选择资源文件-->
+    <item android:drawable="@drawable/icon_menu_center_a" android:state_checked="true" android:state_enabled="true"/>
+    <item android:drawable="@drawable/icon_menu_center"/>
+</selector>

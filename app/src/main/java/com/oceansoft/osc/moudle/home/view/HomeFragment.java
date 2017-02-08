@@ -35,7 +35,7 @@ public class HomeFragment extends AbsBaseFragment<HomePresenter,IHomeView> imple
 
 
     /**
-     * 设置导航栏(如果是一般的导航栏，不用进行设置,有默认的),这里的导航栏比较特殊
+     * 设置导航栏(如果是一般的导航栏，用其他的),这里的导航栏比较特殊
      * @param contentView
      */
     public void initNavigation(View contentView){

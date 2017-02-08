@@ -25,14 +25,14 @@ public class ConsultPresenter extends AbsBasePresenter<ConsultModel,IConsultView
         getModel().getMatterList(pageNum, new ConsultModel.OnLoadLister() {
             @Override
             public void onSuccess(ConsultMatter consultMatter) {
-                getView().load(consultMatter);
+                getView().loadListView(consultMatter);
                 Log.e("tag",consultMatter.getData().getList().get(0).getGuid()+":");
                 Log.i("jc","  getView().load(consultMatter);cg");
             }
 
             @Override
             public void onFailor(String errorMessage) {
-                getView().loadFail();
+                getView().loadListViewFail(errorMessage);
                 Log.i("jc",errorMessage+"加载失败");
             }
         });

@@ -51,7 +51,7 @@ public class ConsultFragment extends AbsBaseFragment<ConsultPresenter,IConsultVi
     }
 
     @Override
-    public void load(ConsultMatter consultMatter) {
+    public void loadListView(ConsultMatter consultMatter) {
         if (consultMatter.isSucc()){
             //关闭控件
             closeLoadingOrRefreshing();
@@ -64,7 +64,7 @@ public class ConsultFragment extends AbsBaseFragment<ConsultPresenter,IConsultVi
     }
 
     @Override
-    public void loadFail() {
+    public void loadListViewFail(String error) {
         closeLoadingOrRefreshing();
     }
     //加载成功时或者失败时----关闭控件

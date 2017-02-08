@@ -9,9 +9,9 @@ import com.oceansoft.osc.mvp.view.IMvpView;
 
 public interface IConsultView extends IMvpView{
 
-    void load(ConsultMatter consultMatter);
+    void loadListView(ConsultMatter consultMatter);
 
-    void loadFail();
+    void loadListViewFail(String errorMessage);
 
 
 }

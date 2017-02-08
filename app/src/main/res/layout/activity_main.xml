@@ -1,36 +1,66 @@
-<android.support.v4.app.FragmentTabHost
-    android:id="@android:id/tabhost"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:clipToPadding="true"
-    android:fitsSystemWindows="true"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
-    <LinearLayout
+    android:orientation="vertical">
+
+    <!-- 首页的布局-->
+
+    <FrameLayout
+        android:id="@+id/fragment_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
-        <FrameLayout
-            android:id="@android:id/tabcontent"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@color/main_content_bg"
-            ></FrameLayout>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/main_line_color"/>
-        <TabWidget
-            android:id="@android:id/tabs"
-            android:layout_gravity="bottom"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"></TabWidget>
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-    </LinearLayout>
+    </FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/radioGroup_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"/>
+
+</LinearLayout>
 
 
+    <!--<android.support.v4.app.FragmentTabHost-->
+    <!--android:id="@android:id/tabhost"-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:clipToPadding="true"-->
+    <!--android:fitsSystemWindows="true"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--&gt;-->
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical"-->
+        <!--&gt;-->
+        <!--<FrameLayout-->
+            <!--android:id="@android:id/tabcontent"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:background="@color/main_content_bg"-->
+            <!--&gt;</FrameLayout>-->
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:background="@color/main_line_color"/>-->
+        <!--<TabWidget-->
+            <!--android:id="@android:id/tabs"-->
+            <!--android:layout_gravity="bottom"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="55dp"></TabWidget>-->
+
+    <!--</LinearLayout>-->
 
 
-</android.support.v4.app.FragmentTabHost>
+
+
+<!--</android.support.v4.app.FragmentTabHost>-->
